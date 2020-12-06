@@ -26,6 +26,14 @@ def tic_tac_toe_game():
         print("It's your turn " + player_one_turn + ".  Where would you like to move?")
         # Player One will select a place to move.
         move = input()
+        
+        if move == "":
+           print("Invalid move!  Please make a valid selection:")
+            continue
+        elif int(move) < 1 or int(move) > 9:
+          print("Invalid move! Please make a valid selection:")
+            continue
+             
         if Tic_Tac_Toe_Board[move] == '':
             Tic_Tac_Toe_Board[move] = player_one_turn
             count += 1
